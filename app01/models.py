@@ -64,6 +64,7 @@ class Publish(models.Model):
     name=models.CharField( max_length=32,null=True)
     city=models.CharField( max_length=32,null=True)
 
+
 class Book1(models.Model):
     """
     书籍表
@@ -71,6 +72,8 @@ class Book1(models.Model):
     title = models.CharField( max_length=32,null=True)
     publishDate=models.DateField()
     price=models.DecimalField(max_digits=5,decimal_places=2)
+    comment = models.FloatField(default=100)
+    good = models.FloatField(default=100)
     publishs=models.ForeignKey(to="Publish",on_delete=models.CASCADE,)
     authors=models.ManyToManyField('Author',)
 
